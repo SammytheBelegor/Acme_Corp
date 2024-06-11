@@ -1,0 +1,23 @@
+.footer {
+    background-color: #2E0000; /* Darker, dark red color */
+    color: #dcdcdc;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    z-index: 100;
+    opacity: 0.95; /* Nearly non-transparent */
+  }
+  
+  .footer a {
+    color: #dcdcdc;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer .MuiTypography-root {
+    color: #dcdcdc;
+  }
+  

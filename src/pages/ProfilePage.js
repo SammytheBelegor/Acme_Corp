@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, TextField, Button, Typography } from '@mui/material';
+import { Container, TextField, Button, Typography, Box, Avatar } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import './ProfilePage.css';
 
@@ -8,7 +8,10 @@ const ProfilePage = () => {
   const [user, setUser] = useState({
     name: '',
     email: '',
-    password: ''
+    password: '',
+    phone: '',
+    dateOfBirth: '',
+    profilePicture: ''
   });
 
   useEffect(() => {
@@ -39,6 +42,19 @@ const ProfilePage = () => {
       <Typography variant="h4" component="h1" gutterBottom>
         Profile
       </Typography>
+      <Box display="flex" alignItems="center" mb={2}>
+        <Avatar src={user.profilePicture} alt="Profile Picture" style={{ width: 100, height: 100, marginRight: 20 }} />
+        <Button variant="contained" component="label">
+          Upload Picture
+          <input type="file" hidden onChange={(e) => {
+            const reader = new FileReader();
+            reader.onload = () => {
+              setUser({ ...user, profilePicture: reader.result });
+            };
+            reader.readAsDataURL(e.target.files[0]);
+          }} />
+        </Button>
+      </Box>
       <form onSubmit={handleSubmit}>
         <TextField
           className="form-field"
@@ -58,6 +74,26 @@ const ProfilePage = () => {
           fullWidth
           required
           disabled
+        />
+        <TextField
+          className="form-field"
+          label="Phone Number"
+          name="phone"
+          value={user.phone}
+          onChange={handleChange}
+          fullWidth
+        />
+        <TextField
+          className="form-field"
+          label="Date of Birth"
+          name="dateOfBirth"
+          type="date"
+          value={user.dateOfBirth}
+          onChange={handleChange}
+          fullWidth
+          InputLabelProps={{
+            shrink: true,
+          }}
         />
         <TextField
           className="form-field"

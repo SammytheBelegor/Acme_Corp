@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
-import { Container, TextField, Button, Typography, Link } from '@mui/material';
+import { Container, TextField, Button, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import './LoginPage.css';
 
-const LoginPage = () => {
+const LoginPage = ({ onLogin }) => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
+  const [formData, setFormData] = useState({ email: '', password: '' });
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
@@ -22,6 +19,7 @@ const LoginPage = () => {
     const user = users.find(u => u.email === formData.email && u.password === formData.password);
     if (user) {
       localStorage.setItem('currentUser', JSON.stringify(user));
+      onLogin();
       navigate('/profile');
     } else {
       setErrorMessage('Invalid email or password');
@@ -59,9 +57,6 @@ const LoginPage = () => {
           Login
         </Button>
       </form>
-      <Typography variant="body2" align="center" style={{ marginTop: 16 }}>
-        Don't have an account? <Link href="#" onClick={() => navigate('/register')}>Register</Link>
-      </Typography>
     </Container>
   );
 };

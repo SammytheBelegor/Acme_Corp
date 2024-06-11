@@ -1,10 +1,15 @@
-.container {
-  max-width: 500px;
-  margin: 50px auto;
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
+}
+
+.profile-paper {
+  padding: 30px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .form-field {
@@ -15,4 +20,11 @@
   display: block;
   width: 100%;
   padding: 10px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
