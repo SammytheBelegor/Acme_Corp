@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Acme_Corp/static/css/main.eb6d56f8.css",
+    "main.js": "/Acme_Corp/static/js/main.2a18f817.js",
+    "static/media/background.mp4": "/Acme_Corp/static/media/background.12937297b5bed9e96acd.mp4",
+    "static/media/logo.jpg": "/Acme_Corp/static/media/logo.a5bb0a21c24a04df5fad.jpg",
+    "static/media/team.jpg": "/Acme_Corp/static/media/team.ef46307b4292083ef9a4.jpg",
+    "index.html": "/Acme_Corp/index.html",
+    "main.eb6d56f8.css.map": "/Acme_Corp/static/css/main.eb6d56f8.css.map",
+    "main.2a18f817.js.map": "/Acme_Corp/static/js/main.2a18f817.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb6d56f8.css",
+    "static/js/main.2a18f817.js"
+  ]
+}
